@@ -3,7 +3,8 @@
 .book-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-  gap: 0; /* inget mellanrum alls */
+  column-gap: 0; 
+  row-gap: 1rem;
 }
 
 .book-grid > div {
@@ -84,7 +85,6 @@
   background-color: #e9ecef; /* lite mörkare grå */
 }
 
-/* 🌐 Smidig transition för allt (extra polish) */
 * {
   transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
