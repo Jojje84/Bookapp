@@ -67,11 +67,15 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// 👇 Viktigt! Lägg in ordningen rätt
-app.UseCors("AllowAngular");  // först CORS
-app.UseAuthentication();      // sen auth
+// 👇 Viktigt! Ordningen
+app.UseCors("AllowAngular");  
+app.UseAuthentication();      
 app.UseAuthorization();
 
 app.MapControllers();
+
+// 👇 Lägg till port-logiken för Render här
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+app.Urls.Add($"http://*:{port}");
 
 app.Run();

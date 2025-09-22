@@ -1352,11 +1352,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PROBOOK\\BookApi\\BookApi.csproj",
+      "projectUniqueName": "C:\\Users\\PROBOOK\\Desktop\\Code\\Bookapp\\Backend\\BookApi.csproj",
       "projectName": "BookApi",
-      "projectPath": "C:\\Users\\PROBOOK\\BookApi\\BookApi.csproj",
+      "projectPath": "C:\\Users\\PROBOOK\\Desktop\\Code\\Bookapp\\Backend\\BookApi.csproj",
       "packagesPath": "C:\\Users\\PROBOOK\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PROBOOK\\BookApi\\obj\\",
+      "outputPath": "C:\\Users\\PROBOOK\\Desktop\\Code\\Bookapp\\Backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PROBOOK\\AppData\\Roaming\\NuGet\\NuGet.Config"
