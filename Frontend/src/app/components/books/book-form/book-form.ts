@@ -34,7 +34,7 @@ export class BookFormComponent implements OnInit {
 
   saveBook() {
     if (this.isEdit) {
-      this.bookService.updateBook(this.book).subscribe(() => {
+      this.bookService.updateBook(this.book.id!, this.book).subscribe(() => {
         this.router.navigate(['/books']);
       });
     } else {
