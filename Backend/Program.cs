@@ -51,7 +51,10 @@ using (var scope = app.Services.CreateScope())
     {
         context.Books.AddRange(
             new Book { Title = "Clean Code", Author = "Robert C. Martin", PublishedDate = DateTime.Parse("2008-08-01") },
-            new Book { Title = "The Pragmatic Programmer", Author = "Andrew Hunt", PublishedDate = DateTime.Parse("1999-10-30") }
+            new Book { Title = "The Pragmatic Programmer", Author = "Andrew Hunt", PublishedDate = DateTime.Parse("1999-10-30") },
+            new Book { Title = "Design Patterns", Author = "Erich Gamma", PublishedDate = DateTime.Parse("1994-10-21") },
+            new Book { Title = "Refactoring", Author = "Martin Fowler", PublishedDate = DateTime.Parse("1999-07-08") },
+            new Book { Title = "Domain-Driven Design", Author = "Eric Evans", PublishedDate = DateTime.Parse("2003-08-30") }
         );
         context.SaveChanges();
     }

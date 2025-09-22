@@ -1,4 +1,14 @@
 /* 📚 Cards */
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 0; /* inget mellanrum alls */
+}
+
+.book-grid > div {
+  padding: 0; /* ingen inre luft */
+}
 .card {
   max-width: 210px;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
@@ -82,6 +92,9 @@
     gap: 0.5rem;
   }
 
+  .book-grid {
+    gap: 0.75rem; /* ca 12px */
+  }
   .card-body {
     padding: 0.8rem 1rem;
   }
