@@ -1,13 +1,14 @@
-# ... dina build-steg ovan ...
+# Bygg steg
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+COPY . .
+RUN dotnet restore
+RUN dotnet publish -c Release -o /app/publish
 
+# Runtime steg
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
-
-# 🧭 Kestrel ska lyssna på Render-porten
 ENV ASPNETCORE_URLS=http://0.0.0.0:10000
-
-# 📣 Exponera rätt port (ta bort ev. EXPOSE 8080/8443)
 EXPOSE 10000
-
 ENTRYPOINT ["dotnet", "BookApi.dll"]
