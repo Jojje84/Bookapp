@@ -1,0 +1,24 @@
+<div class="container mt-4">
+  <h2>Böcker 📚</h2>
+  <button class="btn btn-success mb-3" (click)="addBook()">➕ Lägg till ny bok</button>
+
+  <ul class="list-group">
+    <li
+      *ngFor="let book of books"
+      class="list-group-item d-flex justify-content-between align-items-center"
+    >
+      <div>
+        <strong>{{ book.title }}</strong> – {{ book.author }}
+        <span class="text-muted">({{ book.publishedDate }})</span>
+      </div>
+      <div>
+        <button class="btn btn-sm btn-primary me-2">
+          <i class="fa-solid fa-pen icon-gradient-edit"></i> Redigera
+        </button>
+        <button class="btn btn-sm btn-outline-danger">
+          <i class="fa-solid fa-trash icon-gradient-delete"></i> Ta bort
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
