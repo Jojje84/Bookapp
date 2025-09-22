@@ -7,17 +7,20 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container
+// 🔌 Bind till Render-porten tidigt
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
+
+// Add services
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// DbContext
 builder.Services.AddDbContext<BookContext>(options =>
     options.UseInMemoryDatabase("BooksDB"));
 
-// 🔑 JWT setup
-var key = Encoding.UTF8.GetBytes("SuperSecretKey12345_SuperSecretKey12345"); 
+// JWT
+var key = Encoding.UTF8.GetBytes("SuperSecretKey12345_SuperSecretKey12345");
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -31,23 +34,19 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-// 🌍 CORS policy
+// CORS (tillfälligt öppet när du testar)
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAngular",
-        policy => policy
-            .WithOrigins("http://localhost:4200") // Angular dev server
-            .AllowAnyHeader()
-            .AllowAnyMethod());
+    options.AddPolicy("AllowAll",
+        p => p.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 });
 
 var app = builder.Build();
 
-// Seed data
+// seed
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<BookContext>();
-
     if (!context.Books.Any())
     {
         context.Books.AddRange(
@@ -58,24 +57,20 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
-// Configure the HTTP request pipeline
+// Swagger även i prod (valfritt men praktiskt på Render)
+app.UseSwagger();
+app.UseSwaggerUI();
+
+// ❗️Viktigt: ingen HTTPS-redirect i prod på Render
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseHttpsRedirection();
 }
 
-app.UseHttpsRedirection();
-
-// 👇 Viktigt! Ordningen
-app.UseCors("AllowAngular");  
-app.UseAuthentication();      
+app.UseCors("AllowAll");
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
-// 👇 Lägg till port-logiken för Render här
-var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
-app.Urls.Add($"http://*:{port}");
 
 app.Run();
