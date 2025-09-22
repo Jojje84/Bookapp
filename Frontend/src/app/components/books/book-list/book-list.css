@@ -20,13 +20,20 @@
   font-size: 0.9rem;
 }
 
+.card i.fa-book {
+  font-size: 2rem;
+  padding: 0.6rem 0.8rem;
+}
+
 .card strong {
+  display: block;
   font-size: 0.95rem;
 }
 
 .card small,
 .card .text-muted {
   font-size: 0.75rem;
+  display: block;
 }
 
 .btn-sm {
