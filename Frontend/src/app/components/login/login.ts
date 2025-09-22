@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { BookService } from '../../services/book';
+import { AuthService } from '../../services/auth.service';  // 👈 ändra till AuthService
 
 @Component({
   selector: 'app-login',
@@ -13,15 +13,14 @@ import { BookService } from '../../services/book';
 })
 export class LoginComponent {
   credentials = { username: '', password: '' };
-  token: string | null = null; // 👈 lagra token här
-
+  token: string | null = null;
   errorMessage: string | null = null;
   showRedirectMsg: boolean | undefined;
 
-  constructor(private bookService: BookService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}  // 👈 AuthService istället för BookService
 
   login() {
-    this.bookService.login(this.credentials).subscribe({
+    this.authService.login(this.credentials).subscribe({
       next: (res: any) => {
         this.errorMessage = null;
 
@@ -31,14 +30,14 @@ export class LoginComponent {
         // 🔥 Automatisk utloggning efter 30 minuter
         setTimeout(() => {
           localStorage.removeItem('jwt');
-          this.router.navigate(['/login']); // 👈 bättre än '/'
+          this.router.navigate(['/login']);
           console.log('Token expired – utloggad automatiskt');
         }, 30 * 60 * 1000);
 
         // Visa ev. redirect-meddelande
         this.showRedirectMsg = true;
 
-        // ✅ Navigera vidare direkt till appen
+        // ✅ Navigera vidare till böcker
         this.router.navigate(['/books']);
       },
       error: () => {
