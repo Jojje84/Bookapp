@@ -1,0 +1,15 @@
+.card {
+  border-radius: 0.6rem;
+}
+
+.card-header {
+  font-weight: 600;
+}
+
+.input-group-text {
+  background-color: #f8f9fa;
+}
+
+button i {
+  margin-right: 4px;
+}

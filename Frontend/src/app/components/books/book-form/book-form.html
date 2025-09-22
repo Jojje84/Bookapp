@@ -1,51 +1,49 @@
-<div class="container mt-4">
-  <h2>{{ isEdit ? 'Redigera bok' : 'Lägg till ny bok' }}</h2>
+<form (ngSubmit)="onSubmit()" #bookForm="ngForm">
+  <!-- Titel -->
+  <div class="mb-3 input-group">
+    <span class="input-group-text"><i class="fa-solid fa-book"></i></span>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="book.title"
+      name="title"
+      placeholder="Titel"
+      required
+    />
+  </div>
 
-  <form (ngSubmit)="saveBook()" #bookForm="ngForm">
-    <!-- Titel -->
-    <div class="mb-3">
-      <label for="title" class="form-label">Titel</label>
-      <input
-        id="title"
-        name="title"
-        [(ngModel)]="book.title"
-        class="form-control"
-        required
-      />
-    </div>
+  <!-- Författare -->
+  <div class="mb-3 input-group">
+    <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="book.author"
+      name="author"
+      placeholder="Författare"
+      required
+    />
+  </div>
 
-    <!-- Författare -->
-    <div class="mb-3">
-      <label for="author" class="form-label">Författare</label>
-      <input
-        id="author"
-        name="author"
-        [(ngModel)]="book.author"
-        class="form-control"
-        required
-      />
-    </div>
+  <!-- Publiceringsdatum -->
+  <div class="mb-3 input-group">
+    <span class="input-group-text"><i class="fa-solid fa-calendar"></i></span>
+    <input
+      type="date"
+      class="form-control"
+      [(ngModel)]="book.publishedDate"
+      name="publishedDate"
+      required
+    />
+  </div>
 
-    <!-- Publiceringsdatum -->
-    <div class="mb-3">
-      <label for="publishedDate" class="form-label">Publiceringsdatum</label>
-      <input
-        id="publishedDate"
-        name="publishedDate"
-        [(ngModel)]="book.publishedDate"
-        class="form-control"
-        placeholder="ÅÅÅÅ-MM-DD"
-        required
-      />
-    </div>
-
-    <!-- Knappar -->
-    <button type="submit" class="btn btn-success">
-      {{ isEdit ? 'Uppdatera' : 'Lägg till' }}
+  <!-- Knappar -->
+  <div class="d-flex justify-content-end gap-2">
+    <button type="submit" class="btn btn-success" data-bs-dismiss="modal">
+      <i class="fa-solid fa-check"></i> {{ isEdit ? 'Uppdatera' : 'Lägg till' }}
     </button>
-
-    <button type="button" class="btn btn-secondary ms-2" (click)="cancel()">
-      Avbryt
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+      <i class="fa-solid fa-xmark"></i> Avbryt
     </button>
-  </form>
-</div>
+  </div>
+</form>

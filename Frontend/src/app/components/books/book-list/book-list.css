@@ -1,0 +1,109 @@
+/* 📚 Cards */
+.card {
+  max-width: 210px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  border-radius: 0.5rem;
+}
+
+.card-body {
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+.card strong {
+  font-size: 0.95rem;
+}
+
+.card small,
+.card .text-muted {
+  font-size: 0.75rem;
+}
+
+.btn-sm {
+  padding: 0.2rem 0.4rem;
+  font-size: 0.75rem;
+}
+
+.card:hover {
+  background-color: #e9ecef; /* lite mörkare grå */
+  transform: translateY(-3px); /* lyfter kortet lite */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* starkare skugga */
+}
+
+/* 🖊️ Knappar */
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+
+/* 🔎 Input & sortering – hover */
+.input-group .form-control:hover,
+.input-group .form-select:hover,
+.input-group .btn:hover {
+  background-color: #f8f9fa; /* ljusgrå bakgrund */
+  transition: background-color 0.2s ease;
+}
+
+/* 🔎 Input & sortering – focus (när man klickar i) */
+.input-group .form-control:focus,
+.input-group .form-select:focus {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25); /* blå glow */
+  border-color: #0d6efd;
+}
+
+/* 🎨 Ikon-rutor i input-group */
+.input-group-text {
+  background-color: #ffffff;
+  transition: background-color 0.2s ease;
+}
+
+.input-group-text:hover {
+  background-color: #e9ecef; /* lite mörkare grå */
+}
+
+/* 🌐 Smidig transition för allt (extra polish) */
+* {
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* mobil */
+@media (max-width: 576px) {
+  h2 {
+    text-align: center;
+  }
+
+  .input-group {
+    gap: 0.5rem;
+  }
+
+  .card-body {
+    padding: 0.8rem 1rem;
+  }
+  .card {
+    width: 90%;
+    max-width: 350px;
+    margin: 0 auto 1rem auto;
+  }
+  .row {
+    justify-content: flex-start !important; /* ta bort center på mobil */
+  }
+
+  .card .btn {
+    flex: 1;
+  }
+
+  .card .d-flex.gap-2 {
+    gap: 0.5rem;
+  }
+  .btn-success {
+    display: block;
+    width: 100%;
+    margin: 0 auto 1rem auto;
+  }
+}
