@@ -57,11 +57,11 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
-// Swagger även i prod (valfritt men praktiskt på Render)
+// Swagger även i prod (praktiskt på Render)
 app.UseSwagger();
 app.UseSwaggerUI();
 
-// ❗️Viktigt: ingen HTTPS-redirect i prod på Render
+// ❗️Ingen HTTPS-redirect i prod (Render sköter TLS)
 if (app.Environment.IsDevelopment())
 {
     app.UseHttpsRedirection();
@@ -72,5 +72,11 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+// ✅ Health-check endpoint
+app.MapGet("/", () => "✅ Backend is running on Render!");
+
+// 📝 Logga ut porten
+Console.WriteLine($"🚀 Application is starting on http://0.0.0.0:{port}");
 
 app.Run();
