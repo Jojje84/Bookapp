@@ -1,49 +1,45 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../app.config';   // 👈 Importera API-url
+import { Observable } from 'rxjs';
 
 export interface Book {
-  id: number;
+  id?: number;
   title: string;
   author: string;
   publishedDate: string;
 }
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class BookService {
-  private apiUrl = 'http://localhost:5191/api/books';
+  private baseUrl = environment.apiUrl;  // 👈 Render-backend
 
   constructor(private http: HttpClient) {}
 
-  // 🔑 LOGIN
-  login(credentials: { username: string; password: string }): Observable<{ token: string }> {
-    const authUrl = this.apiUrl.replace('/books', '') + '/auth/login';
-    return this.http.post<{ token: string }>(authUrl, credentials);
-  }
-
+  // 📚 Hämta alla böcker
   getBooks(): Observable<Book[]> {
-    return this.http.get<Book[]>(this.apiUrl);
+    return this.http.get<Book[]>(`${this.baseUrl}/api/books`);
   }
 
+  // 📖 Hämta en bok
+  getBook(id: number): Observable<Book> {
+    return this.http.get<Book>(`${this.baseUrl}/api/books/${id}`);
+  }
+
+  // ➕ Lägg till en bok
   addBook(book: Book): Observable<Book> {
-    return this.http.post<Book>(this.apiUrl, book).pipe(catchError(this.handleError));
+    return this.http.post<Book>(`${this.baseUrl}/api/books`, book);
   }
 
-  updateBook(book: Book): Observable<void> {
-    return this.http.put<void>(`${this.apiUrl}/${book.id}`, book).pipe(catchError(this.handleError));
+  // ✏️ Uppdatera en bok
+  updateBook(id: number, book: Book): Observable<void> {
+    return this.http.put<void>(`${this.baseUrl}/api/books/${id}`, book);
   }
 
+  // 🗑️ Ta bort en bok
   deleteBook(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`).pipe(catchError(this.handleError));
-  }
-
-  private handleError(error: HttpErrorResponse) {
-    if (error.status === 400 && error.error) {
-      return throwError(() => error.error);
-    }
-    return throwError(() => 'Ett okänt fel inträffade');
+    return this.http.delete<void>(`${this.baseUrl}/api/books/${id}`);
   }
 }
