@@ -37,16 +37,17 @@
 }
 
 @media (max-width: 768px) {
-
-.login-card {
+  .login-card {
     border: none !important;
-    box-shadow: none  !important;;
-    background: transparent  !important;;
+    box-shadow: none !important;
+    background: transparent !important;
   }
 
   .d-flex.vh-100 {
-    align-items: flex-start !important; /* börja uppifrån istället för centrerat */
-    padding-top: 40px; /* lite luft från toppen */
+    display: block !important; /* istället för flex */
+    height: auto !important; /* tar bort 100% höjd */
+    align-items: initial !important;
+    padding-top: 0 !important; /* justera om du vill ha mer luft */
   }
 
   .col-md-6:last-child {
