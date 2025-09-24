@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -12,8 +12,9 @@ import { filter } from 'rxjs/operators';
   templateUrl: './navbar.html',
   styleUrls: ['./navbar.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   currentUrl: string = '';
+  isDarkMode: boolean = false; // 🌙 nytt
 
   constructor(public authService: AuthService, private router: Router) {
     // sätt initial url direkt
@@ -24,6 +25,27 @@ export class NavbarComponent {
       .subscribe((event: any) => {
         this.currentUrl = event.url;
       });
+  }
+
+  ngOnInit() {
+    // 🔄 Läs sparat tema från localStorage
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') {
+      this.isDarkMode = true;
+      document.body.classList.add('dark-mode');
+    }
+  }
+
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+
+    if (this.isDarkMode) {
+      document.body.classList.add('dark-mode');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light');
+    }
   }
 
   shouldShowNavbar(): boolean {

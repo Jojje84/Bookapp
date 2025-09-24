@@ -1,22 +1,37 @@
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow" *ngIf="shouldShowNavbar()">
   <div class="container">
-    <a class="navbar-brand"> 📚 Bok-Appen </a>
+    <!-- logotyp -->
+    <a class="navbar-brand">📚 Bok-Appen</a>
 
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <!-- Höger: Switch + Hamburger -->
+    <div class="d-flex align-items-center ms-auto">
+      <!-- Dark/Light toggle -->
+      <label class="theme-switch me-2 mb-0">
+        <input type="checkbox" [checked]="isDarkMode" (change)="toggleTheme()" />
+        <span class="slider">
+          <i class="fa-solid fa-moon moon-icon"></i>
+          <i class="fa-solid fa-sun sun-icon"></i>
+        </span>
+      </label>
 
+      <!-- Hamburger (styr menyn) -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <!-- Själva menyn (separat från hamburgaren) -->
     <div class="collapse navbar-collapse" id="navbarNav">
-      <!-- Navigation -->
-      <ul class="navbar-nav mx-auto text-center">
+      <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0 text-center">
         <li class="nav-item">
           <a class="nav-link" routerLink="/books" routerLinkActive="active">
             <i class="fa-solid fa-book me-1"></i> Böcker
@@ -29,8 +44,8 @@
         </li>
       </ul>
 
-      <!-- Logga ut separat -->
-      <div class="logout-container text-center text-lg-end mt-3 mt-lg-0">
+      <!-- Logga ut -->
+      <div class="logout-container text-center text-lg-end mt-3 mt-lg-0 ms-lg-3">
         <button (click)="logout()" class="btn btn-outline-danger logout-btn">
           <i class="fa-solid fa-right-from-bracket"></i> Logga ut
         </button>

@@ -1,1 +1,148 @@
-/* You can add global styles to this file, and also import other style files */
+/* ================================
+   🌗 Dark/Light Mode Switch
+   ================================ */
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+  z-index: 2;
+}
+
+/* När input är ikryssad (Dark mode) */
+.theme-switch input:checked + .slider {
+  background-color: #4facfe;
+}
+
+.theme-switch input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+/* Ikoner */
+.slider .moon-icon {
+  color: #222;
+}
+
+.slider .sun-icon {
+  color: #ffd43b;
+}
+
+/* Gör ikonerna tydligare beroende på läge */
+.theme-switch input:not(:checked) + .slider .sun-icon {
+  opacity: 1;
+}
+
+.theme-switch input:not(:checked) + .slider .moon-icon {
+  opacity: 0.3;
+}
+
+.theme-switch input:checked + .slider .sun-icon {
+  opacity: 0.3;
+}
+
+.theme-switch input:checked + .slider .moon-icon {
+  opacity: 1;
+}
+
+
+/* ================================
+   🌙 Dark Mode Styles
+   ================================ */
+body.dark-mode {
+  background-color: #181818;
+  color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+  background-color: #202020 !important;
+  border-bottom: 1px solid #333;
+}
+
+body.dark-mode .navbar .nav-link,
+body.dark-mode .navbar .navbar-brand {
+  color: #f0f0f0 !important;  /* ljus text */
+}
+
+body.dark-mode .navbar .nav-link:hover {
+  color: #ffc107 !important; /* gul highlight även i dark mode */
+}
+
+body.dark-mode ::placeholder {
+  color: #bbbbbb !important; /* ljusgrå */
+  opacity: 1; 
+}
+
+body.dark-mode .card {
+  background-color: #242424 !important;
+  color: #f0f0f0 !important;
+  border: 1px solid #333;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+  background-color: #2a2a2a !important;
+  color: #f0f0f0 !important;
+  border: 1px solid #444;
+}
+
+body.dark-mode .btn-success {
+  background-color: #146c43;
+  border-color: #146c43;
+}
+
+body.dark-mode .card .text-muted,
+body.dark-mode small,
+body.dark-mode span {
+  color: #cccccc !important;  /* ljusgrå som syns bättre */
+}
+
+body.dark-mode .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+
+@media (max-width: 768px) {
+  .navbar .navbar-brand {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  .theme-switch {
+    margin-right: 30px;
+  }
+}

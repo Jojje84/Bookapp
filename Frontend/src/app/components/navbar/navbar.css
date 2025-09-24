@@ -34,6 +34,8 @@ button {
   transform: scale(1.05); /* liten pop-effekt */
 }
 
+
+
 @media (max-width: 991px) {
   .logout-container {
     width: 100%;
