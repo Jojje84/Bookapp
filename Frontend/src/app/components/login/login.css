@@ -37,6 +37,13 @@
 }
 
 @media (max-width: 768px) {
+
+.login-card {
+    border: none !important;
+    box-shadow: none  !important;;
+    background: transparent  !important;;
+  }
+
   .d-flex.vh-100 {
     align-items: flex-start !important; /* börja uppifrån istället för centrerat */
     padding-top: 40px; /* lite luft från toppen */
