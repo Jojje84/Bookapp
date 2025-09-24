@@ -37,6 +37,11 @@
 }
 
 @media (max-width: 768px) {
+  .d-flex.vh-100 {
+    align-items: flex-start !important; /* börja uppifrån istället för centrerat */
+    padding-top: 40px; /* lite luft från toppen */
+  }
+
   .col-md-6:last-child {
     display: none; /* Göm högersidan på mobil */
   }
