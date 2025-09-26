@@ -133,12 +133,12 @@ Here you can test all endpoints (JWT token required for protected requests).
 - Books
 
 📚 Lista böcker, redigera, ta bort, lägg till
-![Bocker-sida](screenshots/bocker.png)
+![Books-sida](screenshots/book.png)
 
 - Quotes Page
 
 💬 Display 5 favorite quotes in a responsive grid
-![Citat-sida](screenshots/citat.png)
+![Citat-sida](screenshots/quotes.png)
 
 ---
 
