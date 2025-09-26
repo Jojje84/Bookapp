@@ -50,8 +50,9 @@ Bookapp/
 │   │   └── services/     # BookService, AuthService
 │   ├── angular.json
 │   └── package.json
+``` 
 
----
+
 ## 🌍 Deployment
 
 Backend:
