@@ -4,7 +4,7 @@ En fullstack CRUD-applikation byggd med .NET 9 (Web API) och Angular 20.
 Användaren kan logga in, hantera en lista av böcker (lägga till, redigera, ta bort) och läsa en separat citatsida.
 
 
-##✨ Funktioner
+## ✨ Funktioner
 
 🔑 JWT-login (enkelt användarkonto: admin / password)
 📚 Bokhantering (CRUD)
@@ -18,7 +18,7 @@ Användaren kan logga in, hantera en lista av böcker (lägga till, redigera, ta
 📱 Responsiv design (mobilvänlig navbar med hamburgermeny)
 
 
-##🛠️ Teknikstack
+## 🛠️ Teknikstack
 
 Frontend
     Angular 20
@@ -35,7 +35,7 @@ Hosting
     Frontend: Render
 
 
-##🚀 Kom igång lokalt
+## 🚀 Kom igång lokalt
 
 Klona repo
     git clone https://github.com/Jojje84/Bookapp.git
@@ -66,25 +66,24 @@ Standard-login
 
 Bookapp/
 │── Backend/ # .NET 9 Web API
-│   ├── Controllers/
-│   ├── Models/
-│   ├── Data/
-│   └── Program.cs
+│ ├── Controllers/
+│ ├── Models/
+│ ├── Data/
+│ └── Program.cs
 │
 │── Frontend/ # Angular 20
-│   ├── src/app/
-│   │   ├── components/
-│   │   │   ├── books/    # Bokhantering
-│   │   │   ├── login/    # Login-sida
-│   │   │   ├── navbar/   # Navbar-komponent
-│   │   │   └── quotes/   # Citat-sida
-│   │   └── services/     # BookService, AuthService
-│   ├── angular.json
-│   └── package.json
+│ ├── src/app/
+│ │ ├── components/
+│ │ │ ├── books/ # Bokhantering
+│ │ │ ├── login/ # Login-sida
+│ │ │ ├── navbar/ # Navbar-komponent
+│ │ │ └── quotes/ # Citat-sida
+│ │ └── services/ # BookService, AuthService
+│ ├── angular.json
+│ └── package.json
 
 
-
-##🌍 Deployment
+## 🌍 Deployment
 
 Backend:
 Deployad på Render → https://bookapp-backend-lgwi.onrender.com
@@ -101,7 +100,7 @@ För att frontend ska prata med backend:
 Här kan du testa alla endpoints (kräver JWT-token för skyddade anrop).
 
 
-##📸 Skärmbilder
+## 📸 Skärmbilder
 
 Login-sida
 🔑 Enkel inloggning med JWT
@@ -119,7 +118,7 @@ Citat-sida
 ![Citat-sida](screenshots/citat.png)
 
 
-##✅ Att göra / förbättringar
+## ✅ Att göra / förbättringar
     Byta ut InMemory DB mot en riktig databas (t.ex. PostgreSQL på Render).
     Spara användare och böcker permanent.
     Lägga till registreringsfunktion.
