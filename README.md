@@ -51,7 +51,7 @@ Bookapp/
 │   ├── angular.json
 │   └── package.json
 
-
+---
 ## 🌍 Deployment
 
 Backend:
