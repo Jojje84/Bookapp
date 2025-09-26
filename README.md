@@ -65,7 +65,7 @@ Standard-login
 ##📂 Projektstruktur
 
 Bookapp/
-│── Backend/        # .NET 9 Web API
+│── Backend/    # .NET 9 Web API
 │   ├── Controllers/
 │   ├── Models/
 │   ├── Data/
