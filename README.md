@@ -1,6 +1,11 @@
-# 📚 Bok-appen
+<h1 align="center">📚 Bok-appen</h1>
 
-En fullstack CRUD-applikation byggd med .NET 9 (Web API) och Angular 20. Användaren kan logga in, hantera en lista av böcker (lägga till, redigera, ta bort) och läsa en separat citatsida.
+<p align="center">
+En fullstack CRUD-applikation byggd med .NET 9 (Web API) och Angular 20.  
+Användaren kan logga in, hantera en lista av böcker (lägga till, redigera, ta bort)  
+och läsa en separat citatsida.
+</p>
+
 
 ---
 
@@ -123,17 +128,17 @@ Här kan du testa alla endpoints (kräver JWT-token för skyddade anrop).
 
 ## 📸 Skärmbilder
 
-Login-sida
+- Login-sida
+
 🔑 Enkel inloggning med JWT
 ![Login-sida](screenshots/login.png)
 
-Böcker
+- Böcker
 
 📚 Lista böcker, redigera, ta bort, lägg till
 ![Bocker-sida](screenshots/bocker.png)
 
-
-Citat-sida
+- Citat-sida
 
 💬 Visa 5 favoritcitat i ett responsivt grid
 ![Citat-sida](screenshots/citat.png)
