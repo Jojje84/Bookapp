@@ -1,74 +1,74 @@
-<h1 align="center">📚 Bok-appen</h1>
+<h1 align="center">📚 Book App</h1>
 
 <p align="center">
-En fullstack CRUD-applikation byggd med .NET 9 (Web API) och Angular 20.  
-Användaren kan logga in, hantera en lista av böcker (lägga till, redigera, ta bort)  
-och läsa en separat citatsida.
+A fullstack CRUD application built with .NET 9 (Web API) and Angular 20.  
+Users can log in, manage a list of books (add, edit, delete),  
+and view a separate quotes page.
 </p>
 
 ---
 
-## ✨ Funktioner
+## ✨ Features
 
-- 🔑 JWT-login (enkelt användarkonto: admin / password)
-- 📚 Bokhantering (CRUD)
-  - Lägg till ny bok 
-  - Redigera befintlig bok 
-  - Ta bort bok 
-  - Visa alla böcker i listan
+- 🔑 JWT login (default user: admin / password)  
+- 📚 Book management (CRUD)  
+  - Add new book  
+  - Edit existing book  
+  - Delete book  
+  - View all books in the list  
 
-- 💬 Citatsida med 5 favoritcitat (responsiv design med Bootstrap-kort) 
-- 🌙 Light/Dark mode toggle 📱
--  Responsiv design (mobilvänlig navbar med hamburgermeny)
-
----
-
-## 🛠️ Teknikstack
-
-Frontend 
-- Angular 20 
-- Bootstrap 5 
-- Font Awesome
-
-Backend 
-- ASP.NET Core 9 Web API 
-- Entity Framework Core InMemory 
-- JWT Authentication
-
-Hosting 
-- Backend: Render 
-- Frontend: Render
+- 💬 Quotes page with 5 favorite quotes (responsive design using Bootstrap cards)  
+- 🌙 Light/Dark mode toggle 📱  
+- 📱 Responsive design (mobile-friendly navbar with hamburger menu)  
 
 ---
 
-## 🚀 Kom igång lokalt
+## 🛠️ Tech Stack
 
-Klona repo 
+**Frontend**  
+- Angular 20  
+- Bootstrap 5  
+- Font Awesome  
+
+**Backend**  
+- ASP.NET Core 9 Web API  
+- Entity Framework Core InMemory  
+- JWT Authentication  
+
+**Hosting**  
+- Backend: Render  
+- Frontend: Render  
+
+---
+
+## 🚀 Getting Started Locally
+
+1. Clone the repository:  
 ```
 git clone https://github.com/Jojje84/Bookapp.git cd Bookapp
 ``` 
 
-Backend (ASP.NET Core API) 
+2. Start the Backend (ASP.NET Core API):
 ```
 cd Backend 
 dotnet restore 
 dotnet run
 ``` 
 
-API körs på: 
+API runs at:
 👉 https://localhost:5001/api/books
 
-Frontend (Angular) 
+3. Start the Frontend (Angular):
 ```
 cd Frontend 
 npm install 
 ng serve
 ``` 
 
-Frontend körs på: 
+Frontend runs at:
 👉 http://localhost:4200/
 
-Standard-login 
+4. Default login:
 ```
 admin: test 
 password: 1234
@@ -76,24 +76,22 @@ password: 1234
 
 ---
 
-## 📂 Projektstruktur
-
-
+## 📂 Project Structure
 ```
 Bookapp/
-│── Backend/ # .NET 9 Web API
+│── Backend/              # .NET 9 Web API
 │   ├── Controllers/
 │   ├── Models/
 │   ├── Data/
 │   └── Program.cs
 │
-│── Frontend/ # Angular 20
+│── Frontend/             # Angular 20
 │   ├── src/app/
 │   │   ├── components/
-│   │   │   ├── books/    # Bokhantering
-│   │   │   ├── login/    # Login-sida
-│   │   │   ├── navbar/   # Navbar-komponent
-│   │   │   └── quotes/   # Citat-sida
+│   │   │   ├── books/    # Book management
+│   │   │   ├── login/    # Login page
+│   │   │   ├── navbar/   # Navbar component
+│   │   │   └── quotes/   # Quotes page
 │   │   └── services/     # BookService, AuthService
 │   ├── angular.json
 │   └── package.json
@@ -104,16 +102,16 @@ Bookapp/
 ## 🌍 Deployment
 
 **Backend:**  
-🚀 Deployad på Render → [bookapp-backend-lgwi.onrender.com](https://bookapp-backend-lgwi.onrender.com)  
+🚀 Deployed on Render → [bookapp-backend-lgwi.onrender.com](https://bookapp-backend-lgwi.onrender.com)  
 
 **Frontend:**  
-🚀 Deployad på Render → [bookapp-frontend-mlbt.onrender.com](https://bookapp-frontend-mlbt.onrender.com)  
+🚀 Deployed on Render → [bookapp-frontend-mlbt.onrender.com](https://bookapp-frontend-mlbt.onrender.com)  
 
 ---
 
-### 🔗 Koppling mellan frontend & backend
-För att frontend ska prata med backend:  
-Ändra `BookService` i Angular så att `baseUrl` pekar på din Render-URL.
+## 🔗 Connecting Frontend & Backend
+To connect the Angular frontend with the backend:
+Update BookService in Angular so that baseUrl points to your Render backend URL.
 
 ---
 
@@ -121,32 +119,44 @@ För att frontend ska prata med backend:
 
 🔗 [Swagger UI för backend](https://bookapp-backend-lgwi.onrender.com/swagger)
 
-Här kan du testa alla endpoints (kräver JWT-token för skyddade anrop).
+Here you can test all endpoints (JWT token required for protected requests).
 
 ---
 
-## 📸 Skärmbilder
+## 📸 Screenshots
 
 - Login-sida
 
-🔑 Enkel inloggning med JWT
+🔑 Simple login with JWT
 ![Login-sida](screenshots/login.png)
 
-- Böcker
+- Books
 
 📚 Lista böcker, redigera, ta bort, lägg till
-![Bookr-sida](screenshots/bocker.png)
+![Bocker-sida](screenshots/bocker.png)
 
-- Citat-sida
+- Quotes Page
 
-💬 Visa 5 favoritcitat i ett responsivt grid
+💬 Display 5 favorite quotes in a responsive grid
 ![Citat-sida](screenshots/citat.png)
 
 ---
 
-## ✅ Att göra / förbättringar
+## ✅ To Do / Improvements
 
-- Byta ut InMemory DB mot en riktig databas (t.ex. PostgreSQL på Render).
-- Spara användare och böcker permanent.
-- Lägga till registreringsfunktion.
-- Fler visuella animationer på citat- och bokkort.
+- Replace InMemory DB with a real database (e.g., PostgreSQL on Render).
+- Persist users and books permanently.
+- Add a user registration feature.
+- Add more visual animations for quotes and book cards.
+
+---
+
+## Contact
+
+👤 Jorge
+
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?logo=github&logoColor=white)](https://github.com/Jojje84) 
+&nbsp;
+[![Email](https://img.shields.io/badge/Email-Contact-blue?logo=icloud&logoColor=white)](mailto:jorgeavilas@icloud.com) 
+&nbsp;
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jorge-avila-35622030/)
