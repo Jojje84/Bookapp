@@ -6,7 +6,6 @@ Användaren kan logga in, hantera en lista av böcker (lägga till, redigera, ta
 och läsa en separat citatsida.
 </p>
 
-
 ---
 
 ## ✨ Funktioner
