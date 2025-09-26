@@ -125,14 +125,14 @@ Here you can test all endpoints (JWT token required for protected requests).
 
 ## 📸 Screenshots
 
-- Login-sida
+- Login-
 
 🔑 Simple login with JWT
 ![Login-sida](screenshots/login.png)
 
 - Books
 
-📚 Lista böcker, redigera, ta bort, lägg till
+📚 List books, edit, delete, add  
 ![Books-sida](screenshots/book.png)
 
 - Quotes Page
