@@ -151,3 +151,12 @@ Här kan du testa alla endpoints (kräver JWT-token för skyddade anrop).
 - Spara användare och böcker permanent.
 - Lägga till registreringsfunktion.
 - Fler visuella animationer på citat- och bokkort.
+
+---
+
+## Kontakt
+
+👤 Jorge
+
+GitHub: [Jojje84](https://github.com/Jojje84)
+
