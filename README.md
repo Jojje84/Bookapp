@@ -44,19 +44,19 @@ Hosting
 
 ## 🚀 Kom igång lokalt
 
-Klona repo 
+1. Klona repo 
 ```
 git clone https://github.com/Jojje84/Bookapp.git cd Bookapp
 ``` 
 
-Backend (ASP.NET Core API) 
+2. Backend (ASP.NET Core API) 
 ```
 cd Backend 
 dotnet restore 
 dotnet run
 ``` 
 
-API körs på: 
+3. API körs på: 
 👉 https://localhost:5001/api/books
 
 Frontend (Angular) 
@@ -66,7 +66,7 @@ npm install
 ng serve
 ``` 
 
-Frontend körs på: 
+4. Frontend körs på: 
 👉 http://localhost:4200/
 
 Standard-login 
