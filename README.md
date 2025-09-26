@@ -1,4 +1,4 @@
-### 📚 Bok-appen
+# 📚 Bok-appen
 
 En fullstack CRUD-applikation byggd med .NET 9 (Web API) och Angular 20. Användaren kan logga in, hantera en lista av böcker (lägga till, redigera, ta bort) och läsa en separat citatsida.
 
