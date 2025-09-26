@@ -7,8 +7,8 @@ import { AuthService } from './services/auth.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterModule, NavbarComponent], // 👈 lägg till här
-  templateUrl: './app.html', // eller ./app.component.html om du döper om
+  imports: [CommonModule, RouterModule, NavbarComponent],
+  templateUrl: './app.html', 
 })
 export class AppComponent {
   constructor(public authService: AuthService) {}

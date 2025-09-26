@@ -34,7 +34,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-// CORS (tillfälligt öppet när du testar)
+// CORS (tillfälligt öppet)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",

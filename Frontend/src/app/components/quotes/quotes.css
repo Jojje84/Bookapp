@@ -10,7 +10,7 @@
 h2 {
   font-weight: bold;
 }
-/* Enkel fade + zoom in animation */
+
 @keyframes fadeZoomIn {
   0% {
     opacity: 0;

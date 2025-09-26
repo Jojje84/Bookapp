@@ -14,10 +14,9 @@ import { filter } from 'rxjs/operators';
 })
 export class NavbarComponent implements OnInit {
   currentUrl: string = '';
-  isDarkMode: boolean = false; // 🌙 nytt
+  isDarkMode: boolean = false; 
 
   constructor(public authService: AuthService, private router: Router) {
-    // sätt initial url direkt
     this.currentUrl = this.router.url;
 
     this.router.events
@@ -28,7 +27,7 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
-    // 🔄 Läs sparat tema från localStorage
+    // Läs sparat tema från localStorage
     const theme = localStorage.getItem('theme');
     if (theme === 'dark') {
       this.isDarkMode = true;

@@ -111,7 +111,7 @@
     margin: 0 auto 1rem auto;
   }
   .row {
-    justify-content: flex-start !important; /* ta bort center på mobil */
+    justify-content: flex-start !important;
   }
 
   .card .btn {

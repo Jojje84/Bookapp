@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../app.config';   // 👈 Importera API-url
+import { environment } from '../app.config'; 
 import { Observable } from 'rxjs';
 
 export interface Book {

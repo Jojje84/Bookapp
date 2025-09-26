@@ -1,5 +1,5 @@
 <form (ngSubmit)="onSubmit()" #bookForm="ngForm">
-  <!-- Titel -->
+  <!-- Title -->
   <div class="mb-3 input-group">
     <span class="input-group-text"><i class="fa-solid fa-book"></i></span>
     <input
@@ -7,12 +7,12 @@
       class="form-control"
       [(ngModel)]="book.title"
       name="title"
-      placeholder="Titel"
+      placeholder="Title"
       required
     />
   </div>
 
-  <!-- Författare -->
+  <!-- Author -->
   <div class="mb-3 input-group">
     <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
     <input
@@ -20,31 +20,31 @@
       class="form-control"
       [(ngModel)]="book.author"
       name="author"
-      placeholder="Författare"
+      placeholder="Author"
       required
     />
   </div>
 
-  <!-- Publiceringsdatum -->
+  <!-- Published Date -->
   <div class="mb-3 input-group">
     <span class="input-group-text"><i class="fa-solid fa-calendar"></i></span>
     <input
       type="date"
       class="form-control"
       [(ngModel)]="book.publishedDate"
-       [ngModel]="book.publishedDate | date:'yyyy-MM-dd'"
+      [ngModel]="book.publishedDate | date:'yyyy-MM-dd'"
       name="publishedDate"
       required
     />
   </div>
 
-  <!-- Knappar -->
+  <!-- Buttons -->
   <div class="d-flex justify-content-end gap-2">
     <button type="submit" class="btn btn-success" data-bs-dismiss="modal">
-      <i class="fa-solid fa-check"></i> {{ isEdit ? 'Uppdatera' : 'Lägg till' }}
+      <i class="fa-solid fa-check"></i> {{ isEdit ? 'Update' : 'Add' }}
     </button>
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-      <i class="fa-solid fa-xmark"></i> Avbryt
+      <i class="fa-solid fa-xmark"></i> Cancel
     </button>
   </div>
 </form>

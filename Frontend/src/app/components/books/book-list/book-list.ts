@@ -16,7 +16,7 @@ declare var bootstrap: any;
 export class BookListComponent implements OnInit {
   books: Book[] = [];
   bookToDelete: Book | null = null;
-  editingBook: Book = { title: '', author: '', publishedDate: '' }; // 🔹 lägg till denna
+  editingBook: Book = { title: '', author: '', publishedDate: '' }; 
   searchText: string = '';
   sortBy: string = 'title';
 
@@ -29,36 +29,36 @@ export class BookListComponent implements OnInit {
   loadBooks() {
     this.bookService.getBooks().subscribe({
       next: (data) => (this.books = data),
-      error: (err) => console.error('Kunde inte hämta böcker', err),
+      error: (err) => console.error('Failed to fetch books', err),
     });
   }
 
-  // 🔹 öppna modal för add/edit
+  // 🔹 open modal for add/edit
   openBookModal(book?: Book) {
     if (book) {
-      this.editingBook = { ...book }; // redigera befintlig
+      this.editingBook = { ...book }; // edit existing
     } else {
-      this.editingBook = { title: '', author: '', publishedDate: '' }; // ny bok
+      this.editingBook = { title: '', author: '', publishedDate: '' }; // new book
     }
   }
 
-  // 🔹 spara bok
+  // 🔹 save book
   saveBook(book: Book) {
     if (book.id) {
       this.bookService.updateBook(book.id, book).subscribe({
         next: () => {
           this.books = this.books.map((b) => (b.id === book.id ? book : b));
-          this.closeBookModal(); // 👈 stäng modal
+          this.closeBookModal();
         },
-        error: (err) => console.error('Kunde inte uppdatera bok', err),
+        error: (err) => console.error('Failed to update book', err),
       });
     } else {
       this.bookService.addBook(book).subscribe({
         next: (created) => {
           this.books.push(created);
-          this.closeBookModal(); // 👈 stäng modal
+          this.closeBookModal(); 
         },
-        error: (err) => console.error('Kunde inte lägga till bok', err),
+        error: (err) => console.error('Failed to add book', err),
       });
     }
   }
@@ -71,12 +71,12 @@ export class BookListComponent implements OnInit {
     }
   }
 
-  // 🔹 öppna modal för radering
+  // 🔹 open modal for deletion
   openDeleteModal(book: Book) {
     this.bookToDelete = book;
   }
 
-  // 🔹 bekräfta radering
+  // 🔹 confirm deletion
   confirmDelete() {
     if (this.bookToDelete) {
       this.bookService.deleteBook(this.bookToDelete.id!).subscribe({
@@ -84,12 +84,12 @@ export class BookListComponent implements OnInit {
           this.books = this.books.filter((b) => b.id !== this.bookToDelete?.id);
           this.bookToDelete = null;
         },
-        error: (err) => console.error('Kunde inte radera bok', err),
+        error: (err) => console.error('Failed to delete book', err),
       });
     }
   }
 
-  // 🔹 filtrering + sortering
+  // 🔹 filtering + sorting
   get filteredBooks() {
     let filtered = this.books;
 

@@ -135,7 +135,7 @@ Här kan du testa alla endpoints (kräver JWT-token för skyddade anrop).
 - Böcker
 
 📚 Lista böcker, redigera, ta bort, lägg till
-![Bocker-sida](screenshots/bocker.png)
+![Bookr-sida](screenshots/bocker.png)
 
 - Citat-sida
 

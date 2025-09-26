@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';  // 👈 ändra till AuthService
+import { AuthService } from '../../services/auth.service'; 
 
 @Component({
   selector: 'app-login',
@@ -17,32 +17,32 @@ export class LoginComponent {
   errorMessage: string | null = null;
   showRedirectMsg: boolean | undefined;
 
-  constructor(private authService: AuthService, private router: Router) {}  // 👈 AuthService istället för BookService
+  constructor(private authService: AuthService, private router: Router) {}  
 
   login() {
     this.authService.login(this.credentials).subscribe({
       next: (res: any) => {
         this.errorMessage = null;
 
-        // ✅ Spara token i localStorage
+        // Save token in localStorage
         localStorage.setItem('jwt', res.token);
 
-        // 🔥 Automatisk utloggning efter 30 minuter
+        // Automatic logout after 30 minutes
         setTimeout(() => {
           localStorage.removeItem('jwt');
           this.router.navigate(['/login']);
-          console.log('Token expired – utloggad automatiskt');
+          console.log('Token expired – logged out automatically');
         }, 30 * 60 * 1000);
 
-        // Visa ev. redirect-meddelande
+        // Show redirect message if needed
         this.showRedirectMsg = true;
 
-        // ✅ Navigera vidare till böcker
+        // Navigate to books
         this.router.navigate(['/books']);
       },
       error: () => {
         this.showRedirectMsg = false;
-        this.errorMessage = 'Fel användarnamn eller lösenord';
+        this.errorMessage = 'Invalid username or password';
       },
     });
   }

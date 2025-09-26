@@ -1,8 +1,8 @@
 <div class="d-flex justify-content-center align-items-center vh-100">
-<div class="card shadow-lg rounded overflow-hidden" style="max-width: 900px; width: 100%;">
+  <div class="card shadow-lg rounded overflow-hidden" style="max-width: 900px; width: 100%;">
 
     <div class="row g-0">
-      <!-- Vänster -->
+      <!-- Left -->
       <div class="col-md-6 bg-white d-flex justify-content-center align-items-center h-100">
         <div class="p-5 w-100" style="max-width: 350px">
           <h3 class="mb-4 fw-bold"><i class="fa-solid fa-key text-warning me-2"></i> Login</h3>
@@ -10,7 +10,7 @@
 
           <form (ngSubmit)="login()">
             <div class="mb-3">
-              <label class="form-label">Användarnamn</label>
+              <label class="form-label">Username</label>
               <input
                 [(ngModel)]="credentials.username"
                 name="username"
@@ -19,7 +19,7 @@
               />
             </div>
             <div class="mb-3">
-              <label class="form-label">Lösenord</label>
+              <label class="form-label">Password</label>
               <input
                 [(ngModel)]="credentials.password"
                 name="password"
@@ -29,19 +29,19 @@
               />
             </div>
             <button type="submit" class="btn btn-primary w-100 fw-bold rounded-pill">
-              Logga in
+              Login
             </button>
           </form>
         </div>
       </div>
 
-      <!-- Höger -->
+      <!-- Right -->
       <div
         class="col-md-6 d-flex flex-column justify-content-center align-items-center text-white text-center p-5"
         style="background: linear-gradient(135deg, #4facfe, #00f2fe)"
       >
-        <h1 class="fw-bold mb-3">📚 Bok-appen</h1>
-        <p class="lead">"Sälj, dela och inspireras av böcker och citat – enkelt och tryggt."</p>
+        <h1 class="fw-bold mb-3">📚 Book App</h1>
+        <p class="lead">"Buy, share and get inspired by books and quotes – simple and secure."</p>
       </div>
     </div>
   </div>

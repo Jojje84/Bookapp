@@ -13,8 +13,7 @@ namespace BookApi.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginModel model)
         {
-            // 👇 Här kan du lägga "riktig" användarvalidering mot DB.
-            // För demo: bara hårdkodat användarnamn/lösenord
+         
             if (model.Username == "test" && model.Password == "1234")
             {
                 var tokenHandler = new JwtSecurityTokenHandler();
