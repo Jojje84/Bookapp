@@ -2,6 +2,8 @@
 
 En fullstack CRUD-applikation byggd med .NET 9 (Web API) och Angular 20. Användaren kan logga in, hantera en lista av böcker (lägga till, redigera, ta bort) och läsa en separat citatsida.
 
+---
+
 ## ✨ Funktioner
 
 - 🔑 JWT-login (enkelt användarkonto: admin / password)
@@ -14,6 +16,8 @@ En fullstack CRUD-applikation byggd med .NET 9 (Web API) och Angular 20. Använd
 - 💬 Citatsida med 5 favoritcitat (responsiv design med Bootstrap-kort) 
 - 🌙 Light/Dark mode toggle 📱
 -  Responsiv design (mobilvänlig navbar med hamburgermeny)
+
+---
 
 ## 🛠️ Teknikstack
 
@@ -30,6 +34,8 @@ Backend
 Hosting 
 - Backend: Render 
 - Frontend: Render
+
+---
 
 ## 🚀 Kom igång lokalt
 
@@ -64,7 +70,10 @@ admin: test
 password: 1234
 ``` 
 
+---
+
 ## 📂 Projektstruktur
+
 
 ```
 Bookapp/
@@ -86,9 +95,9 @@ Bookapp/
 │   └── package.json
 ``` 
 
+---
 
 ## 🌍 Deployment
-
 
 **Backend:**  
 🚀 Deployad på Render → [bookapp-backend-lgwi.onrender.com](https://bookapp-backend-lgwi.onrender.com)  
@@ -102,12 +111,15 @@ Bookapp/
 För att frontend ska prata med backend:  
 Ändra `BookService` i Angular så att `baseUrl` pekar på din Render-URL.
 
+---
+
 ## Backend API
 
 🔗 [Swagger UI för backend](https://bookapp-backend-lgwi.onrender.com/swagger)
 
 Här kan du testa alla endpoints (kräver JWT-token för skyddade anrop).
 
+---
 
 ## 📸 Skärmbilder
 
@@ -126,6 +138,7 @@ Citat-sida
 💬 Visa 5 favoritcitat i ett responsivt grid
 ![Citat-sida](screenshots/citat.png)
 
+---
 
 ## ✅ Att göra / förbättringar
 
