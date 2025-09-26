@@ -62,25 +62,26 @@ Standard-login
     password: 1234
 
 
-##📂 Projektstruktur
+## 📂 Projektstruktur
 
 Bookapp/
-│── Backend/    # .NET 9 Web API
+│── Backend/ # .NET 9 Web API
 │   ├── Controllers/
 │   ├── Models/
 │   ├── Data/
-│   ├── Program.cs
+│   └── Program.cs
 │
-│── Frontend/       # Angular 20
+│── Frontend/ # Angular 20
 │   ├── src/app/
 │   │   ├── components/
-│   │   │   ├── books/        # Bokhantering
-│   │   │   ├── login/        # Login-sida
-│   │   │   ├── navbar/       # Navbar-komponent
-│   │   │   ├── quotes/       # Citat-sida
-│   │   ├── services/         # BookService, AuthService
+│   │   │   ├── books/    # Bokhantering
+│   │   │   ├── login/    # Login-sida
+│   │   │   ├── navbar/   # Navbar-komponent
+│   │   │   └── quotes/   # Citat-sida
+│   │   └── services/     # BookService, AuthService
 │   ├── angular.json
-│   ├── package.json
+│   └── package.json
+
 
 
 ##🌍 Deployment
@@ -103,10 +104,8 @@ Här kan du testa alla endpoints (kräver JWT-token för skyddade anrop).
 ##📸 Skärmbilder
 
 Login-sida
-![Login-sida](screenshots/login.png)
-
-
 🔑 Enkel inloggning med JWT
+![Login-sida](screenshots/login.png)
 
 Böcker
 
