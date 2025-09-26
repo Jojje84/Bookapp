@@ -89,14 +89,18 @@ Bookapp/
 
 ## 🌍 Deployment
 
-- Backend:
-  Deployad på Render → https://bookapp-backend-lgwi.onrender.com
 
-- Frontend:
-  Deployad på Render → https://bookapp-frontend-mlbt.onrender.com
+**Backend:**  
+🚀 Deployad på Render → [bookapp-backend-lgwi.onrender.com](https://bookapp-backend-lgwi.onrender.com)  
 
-För att frontend ska prata med backend:
-Ändra BookService i Angular så att baseUrl pekar på Render-URL:
+**Frontend:**  
+🚀 Deployad på Render → [bookapp-frontend-mlbt.onrender.com](https://bookapp-frontend-mlbt.onrender.com)  
+
+---
+
+### 🔗 Koppling mellan frontend & backend
+För att frontend ska prata med backend:  
+Ändra `BookService` i Angular så att `baseUrl` pekar på din Render-URL.
 
 ## Backend API
 
