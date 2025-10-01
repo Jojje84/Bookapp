@@ -1,3 +1,14 @@
+/*
+ * Bookapp - Book Management System Frontend
+ * Copyright (c) 2025 Jorge Avila
+ * Author: Jorge Avila (jorgeavilas@icloud.com)
+ * Repository: https://github.com/Jojje84/Bookapp
+ * License: MIT License - see LICENSE file for details
+ * 
+ * This file contains the authentication service with JWT handling.
+ * Original work by Jorge Avila - please maintain attribution.
+ */
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../app.config';  // 👈 Importera din backend-URL

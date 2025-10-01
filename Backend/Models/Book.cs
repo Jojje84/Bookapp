@@ -1,3 +1,14 @@
+/*
+ * Bookapp - Book Management System Backend
+ * Copyright (c) 2025 Jorge Avila
+ * Author: Jorge Avila (jorgeavilas@icloud.com)
+ * Repository: https://github.com/Jojje84/Bookapp
+ * License: MIT License - see LICENSE file for details
+ * 
+ * This file contains the Book model with validation attributes.
+ * Original work by Jorge Avila - please maintain attribution.
+ */
+
 using System.ComponentModel.DataAnnotations;
 
 namespace BookApi.Models

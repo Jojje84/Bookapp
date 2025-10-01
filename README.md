@@ -151,6 +151,12 @@ Here you can test all endpoints (JWT token required for protected requests).
 
 ---
 
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
 ## Contact
 
 👤 Jorge
